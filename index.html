@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Göbeller Otomotiv - Hatay ve Osmaniye'de 7/24 ağır vasıta yol yardım, tır ve kamyon arıza servisi.">
+  <title>Göbeller Otomotiv | 7/24 Ağır Vasıta Yol Yardım</title>
+  <style>
+    :root{
+      --red:#e11d2e;
+      --dark:#0b0d10;
+      --dark2:#15191e;
+      --text:#f5f5f5;
+      --muted:#b8bec7;
+      --card:#1b2026;
+      --border:#303741;
+    }
+    *{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth}
+    body{
+      font-family:Arial,Helvetica,sans-serif;
+      background:var(--dark);
+      color:var(--text);
+      line-height:1.6;
+    }
+    a{text-decoration:none;color:inherit}
+    .container{width:min(1120px,92%);margin:auto}
+    header{
+      position:sticky;top:0;z-index:20;
+      background:rgba(11,13,16,.94);
+      backdrop-filter:blur(10px);
+      border-bottom:1px solid var(--border);
+    }
+    nav{min-height:72px;display:flex;align-items:center;justify-content:space-between;gap:20px}
+    .logo{font-size:25px;font-weight:900;letter-spacing:.5px}
+    .logo span{color:var(--red)}
+    .menu{display:flex;gap:25px;color:#ddd;font-weight:700;font-size:14px}
+    .menu a:hover{color:#fff}
+    .nav-call{
+      background:var(--red);padding:11px 16px;border-radius:8px;font-weight:800
+    }
+    .hero{
+      min-height:650px;display:flex;align-items:center;
+      background:
+        linear-gradient(90deg,rgba(5,7,9,.97) 0%,rgba(5,7,9,.82) 48%,rgba(5,7,9,.48) 100%),
+        radial-gradient(circle at 80% 45%,#3a1015 0%,#121519 38%,#080a0d 75%);
+      position:relative;overflow:hidden;
+    }
+    .hero:after{
+      content:"";position:absolute;right:-120px;bottom:-180px;width:520px;height:520px;
+      border:70px solid rgba(225,29,46,.08);border-radius:50%;
+    }
+    .hero-content{position:relative;z-index:2;max-width:720px;padding:80px 0}
+    .badge{
+      display:inline-block;border:1px solid #5a252b;color:#ffb1b7;background:#261316;
+      padding:7px 12px;border-radius:999px;font-size:13px;font-weight:800;margin-bottom:20px
+    }
+    h1{font-size:clamp(42px,7vw,76px);line-height:1.02;margin-bottom:22px}
+    h1 span{color:var(--red)}
+    .hero p{font-size:20px;color:#d2d6dc;max-width:650px;margin-bottom:30px}
+    .buttons{display:flex;gap:12px;flex-wrap:wrap}
+    .btn{padding:15px 22px;border-radius:9px;font-weight:900;display:inline-flex;align-items:center;gap:9px}
+    .btn-red{background:var(--red)}
+    .btn-red:hover{background:#c91424}
+    .btn-outline{border:1px solid #626a74;background:#15191e}
+    .btn-outline:hover{border-color:#fff}
+    .quick{
+      background:#111419;border-top:1px solid var(--border);border-bottom:1px solid var(--border)
+    }
+    .quick-grid{display:grid;grid-template-columns:repeat(3,1fr)}
+    .quick-item{padding:25px;border-right:1px solid var(--border)}
+    .quick-item:last-child{border-right:0}
+    .quick-item small{display:block;color:var(--muted);margin-bottom:4px}
+    .quick-item strong{font-size:20px}
+    section{padding:85px 0}
+    .section-head{text-align:center;max-width:720px;margin:0 auto 45px}
+    .section-head .eyebrow{color:var(--red);font-weight:900;text-transform:uppercase;letter-spacing:2px;font-size:13px}
+    .section-head h2{font-size:38px;margin:8px 0 12px}
+    .section-head p{color:var(--muted)}
+    .services{background:#101318}
+    .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    .card{
+      background:var(--card);border:1px solid var(--border);border-radius:13px;padding:25px;
+      transition:.2s;
+    }
+    .card:hover{transform:translateY(-3px);border-color:#5a6069}
+    .icon{font-size:32px;margin-bottom:12px}
+    .card h3{font-size:20px;margin-bottom:7px}
+    .card p{color:var(--muted);font-size:15px}
+    .why{background:#0b0d10}
+    .why-grid{display:grid;grid-template-columns:1fr 1fr;gap:25px;align-items:stretch}
+    .why-box{
+      background:#15191e;border:1px solid var(--border);border-radius:14px;padding:30px
+    }
+    .why-box h3{font-size:25px;margin-bottom:15px}
+    .checks{display:grid;gap:14px}
+    .check{display:flex;gap:11px;align-items:flex-start;color:#ddd}
+    .check b{color:#ff4b58}
+    .area{
+      background:linear-gradient(135deg,#180d0f,#101318)
+    }
+    .area-box{
+      border:1px solid #4b2529;border-radius:16px;padding:40px;text-align:center
+    }
+    .area-box h2{font-size:38px;margin-bottom:10px}
+    .area-box p{color:#c8cdd4;margin-bottom:20px}
+    .locations{display:flex;justify-content:center;gap:12px;flex-wrap:wrap}
+    .location{padding:10px 17px;border-radius:999px;background:#241519;border:1px solid #5a252b;font-weight:800}
+    .contact{background:#101318}
+    .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:25px}
+    .contact-card{background:#1a1f25;border:1px solid var(--border);border-radius:14px;padding:30px}
+    .contact-row{display:flex;gap:14px;align-items:center;padding:17px 0;border-bottom:1px solid var(--border)}
+    .contact-row:last-child{border-bottom:0}
+    .contact-row .big{font-size:25px}
+    .contact-row small{display:block;color:var(--muted)}
+    .contact-row strong{font-size:19px}
+    footer{padding:30px 0;background:#080a0c;border-top:1px solid var(--border);text-align:center;color:#89919b;font-size:14px}
+    .floating{
+      position:fixed;right:18px;bottom:18px;z-index:30;display:flex;gap:10px
+    }
+    .float-btn{
+      width:55px;height:55px;border-radius:50%;display:grid;place-items:center;
+      font-size:24px;box-shadow:0 8px 25px rgba(0,0,0,.35)
+    }
+    .phone{background:var(--red)}
+    .wa{background:#20b85a}
+    @media(max-width:800px){
+      .menu{display:none}
+      .nav-call{padding:10px 12px;font-size:13px}
+      .hero{min-height:590px}
+      .hero p{font-size:17px}
+      .quick-grid{grid-template-columns:1fr}
+      .quick-item{border-right:0;border-bottom:1px solid var(--border)}
+      .quick-item:last-child{border-bottom:0}
+      .grid{grid-template-columns:1fr}
+      .why-grid,.contact-grid{grid-template-columns:1fr}
+      section{padding:65px 0}
+      .section-head h2,.area-box h2{font-size:30px}
+      .area-box{padding:28px 18px}
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="container">
+    <nav>
+      <a class="logo" href="#anasayfa">GÖBELLER <span>OTOMOTİV</span></a>
+      <div class="menu">
+        <a href="#hizmetler">Hizmetler</a>
+        <a href="#neden">Neden Biz?</a>
+        <a href="#bolge">Hizmet Bölgeleri</a>
+        <a href="#iletisim">İletişim</a>
+      </div>
+      <a class="nav-call" href="tel:+905383856312">📞 Hemen Ara</a>
+    </nav>
+  </div>
+</header>
+
+<main id="anasayfa">
+  <section class="hero">
+    <div class="container">
+      <div class="hero-content">
+        <div class="badge">🚨 7/24 AĞIR VASITA YOL YARDIM</div>
+        <h1>Yolda kaldığınızda<br><span>yanınızdayız.</span></h1>
+        <p>
+          Hatay ve Osmaniye'de tır, kamyon, otobüs ve diğer ağır vasıtalar için
+          7/24 yol yardım ve yerinde arıza desteği.
+        </p>
+        <div class="buttons">
+          <a class="btn btn-red" href="tel:+905383856312">📞 0538 385 63 12</a>
+          <a class="btn btn-outline" href="https://wa.me/905541650919?text=Merhaba%20Göbeller%20Otomotiv%2C%20yol%20yardım%20için%20ulaşıyorum." target="_blank">💬 WhatsApp'tan Ulaş</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="quick">
+    <div class="container quick-grid">
+      <div class="quick-item"><small>Hizmet</small><strong>7/24 Acil Yol Yardım</strong></div>
+      <div class="quick-item"><small>Bölge</small><strong>Hatay & Osmaniye</strong></div>
+      <div class="quick-item"><small>Merkez</small><strong>İskenderun / Hatay</strong></div>
+    </div>
+  </div>
+
+  <section class="services" id="hizmetler">
+    <div class="container">
+      <div class="section-head">
+        <div class="eyebrow">Hizmetlerimiz</div>
+        <h2>Ağır vasıtanız için yerinde destek</h2>
+        <p>Arızanın türüne göre mümkün olan en hızlı şekilde yerinde müdahale için bize ulaşın.</p>
+      </div>
+      <div class="grid">
+        <div class="card"><div class="icon">🚛</div><h3>Tır Yol Yardım</h3><p>Tır ve çekiciler için 7/24 yol yardım ve yerinde arıza desteği.</p></div>
+        <div class="card"><div class="icon">🚚</div><h3>Kamyon Yol Yardım</h3><p>Kamyon ve ağır ticari araçlarda acil yol yardım hizmeti.</p></div>
+        <div class="card"><div class="icon">🔧</div><h3>Yerinde Arıza</h3><p>Arızanın bulunduğu noktada tespit ve uygun müdahale desteği.</p></div>
+        <div class="card"><div class="icon">⚡</div><h3>Elektrik & Elektronik</h3><p>Elektrik ve elektronik kaynaklı arızalarda kontrol ve servis desteği.</p></div>
+        <div class="card"><div class="icon">🛠️</div><h3>Mekanik Servis</h3><p>Motor ve mekanik sistemlerde arıza tespiti ve onarım desteği.</p></div>
+        <div class="card"><div class="icon">🔋</div><h3>Akü & Takviye</h3><p>Akü kaynaklı çalışmama durumlarında yol yardım desteği.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="why" id="neden">
+    <div class="container">
+      <div class="section-head">
+        <div class="eyebrow">Göbeller Otomotiv</div>
+        <h2>Neden bizi aramalısınız?</h2>
+        <p>Yolda kaldığınızda hızlı iletişim ve doğru yönlendirme için buradayız.</p>
+      </div>
+      <div class="why-grid">
+        <div class="why-box">
+          <h3>7/24 Ulaşılabilirlik</h3>
+          <div class="checks">
+            <div class="check"><b>✓</b><span>Günün her saati telefon ve WhatsApp üzerinden ulaşabilirsiniz.</span></div>
+            <div class="check"><b>✓</b><span>Aracınızın bulunduğu konumu WhatsApp üzerinden gönderebilirsiniz.</span></div>
+            <div class="check"><b>✓</b><span>Hatay ve Osmaniye bölgesinde ağır vasıta yol yardım desteği.</span></div>
+          </div>
+        </div>
+        <div class="why-box">
+          <h3>Hızlı İletişim</h3>
+          <div class="buttons">
+            <a class="btn btn-red" href="tel:+905383856312">📞 Ara</a>
+            <a class="btn btn-outline" href="https://wa.me/905541650919?text=Merhaba%20Göbeller%20Otomotiv%2C%20yol%20yardım%20için%20ulaşıyorum." target="_blank">💬 WhatsApp</a>
+          </div>
+          <p style="color:#aeb5be;margin-top:18px">Aradığınızda aracın marka/modelini, arıza durumunu ve bulunduğunuz konumu belirtmeniz işlemi hızlandırabilir.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="area" id="bolge">
+    <div class="container">
+      <div class="area-box">
+        <h2>Hatay & Osmaniye'deyiz</h2>
+        <p>Merkezimiz İskenderun / Hatay. Ağır vasıta yol yardım ihtiyacınız olduğunda bizimle iletişime geçin.</p>
+        <div class="locations">
+          <span class="location">📍 İskenderun</span>
+          <span class="location">📍 Hatay</span>
+          <span class="location">📍 Osmaniye</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="contact" id="iletisim">
+    <div class="container">
+      <div class="section-head">
+        <div class="eyebrow">İletişim</div>
+        <h2>Yol yardım için bize ulaşın</h2>
+        <p>Telefonla arayın veya WhatsApp üzerinden konumunuzu gönderin.</p>
+      </div>
+      <div class="contact-grid">
+        <div class="contact-card">
+          <div class="contact-row">
+            <div class="big">📞</div>
+            <div><small>Telefon</small><a href="tel:+905383856312"><strong>0538 385 63 12</strong></a></div>
+          </div>
+          <div class="contact-row">
+            <div class="big">💬</div>
+            <div><small>WhatsApp</small><a href="https://wa.me/905541650919" target="_blank"><strong>0554 165 09 19</strong></a></div>
+          </div>
+          <div class="contact-row">
+            <div class="big">📍</div>
+            <div><small>Merkez</small><strong>İskenderun / Hatay</strong></div>
+          </div>
+        </div>
+        <div class="contact-card">
+          <h3 style="font-size:25px;margin-bottom:10px">Acil yol yardım</h3>
+          <p style="color:#b8bec7;margin-bottom:22px">Yolda kaldıysanız beklemeyin. Telefonla arayın veya WhatsApp'tan konumunuzu gönderin.</p>
+          <div class="buttons">
+            <a class="btn btn-red" href="tel:+905383856312">📞 Hemen Ara</a>
+            <a class="btn btn-outline" href="https://wa.me/905541650919?text=Merhaba%20Göbeller%20Otomotiv%2C%20yol%20yardım%20için%20ulaşıyorum." target="_blank">💬 Konum Gönder</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="container">
+    © 2026 Göbeller Otomotiv — 7/24 Ağır Vasıta Yol Yardım | Hatay & Osmaniye
+  </div>
+</footer>
+
+<div class="floating">
+  <a class="float-btn phone" href="tel:+905383856312" aria-label="Telefon">📞</a>
+  <a class="float-btn wa" href="https://wa.me/905541650919?text=Merhaba%20Göbeller%20Otomotiv%2C%20yol%20yardım%20için%20ulaşıyorum." target="_blank" aria-label="WhatsApp">💬</a>
+</div>
+
+</body>
+</html>
