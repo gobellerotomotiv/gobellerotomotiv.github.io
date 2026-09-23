@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://gobellerotomotiv.github.io/sitemap.xml
